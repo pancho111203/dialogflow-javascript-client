@@ -4,6 +4,7 @@
   "description": "Javascript SDK for https://api.ai/",
   "main": "index",
   "dependencies": {
+    "babel-preset-es2015": "^6.24.1"
   },
   "devDependencies": {
     "@types/chai": "^3.4.35",

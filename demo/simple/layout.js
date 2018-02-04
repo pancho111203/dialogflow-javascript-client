@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Copyright 2017 Google Inc. All Rights Reserved.
  *
@@ -13,8 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-(function() {
+
+(function () {
   "use strict";
 
   var ENTER_KEY_CODE = 13;
@@ -49,21 +51,19 @@
     createQueryNode(value);
     var responseNode = createResponseNode();
 
-    sendText(value)
-      .then(function(response) {
-        var result;
-        try {
-          result = response.result.fulfillment.speech
-        } catch(error) {
-          result = "";
-        }
-        setResponseJSON(response);
-        setResponseOnNode(result, responseNode);
-      })
-      .catch(function(err) {
-        setResponseJSON(err);
-        setResponseOnNode("Something goes wrong", responseNode);
-      });
+    sendText(value).then(function (response) {
+      var result;
+      try {
+        result = response.result.fulfillment.speech;
+      } catch (error) {
+        result = "";
+      }
+      setResponseJSON(response);
+      setResponseOnNode(result, responseNode);
+    }).catch(function (err) {
+      setResponseJSON(err);
+      setResponseOnNode("Something goes wrong", responseNode);
+    });
   }
 
   function createQueryNode(query) {
@@ -91,8 +91,5 @@
     node.innerHTML = JSON.stringify(response, null, 2);
   }
 
-  function sendRequest() {
-
-  }
-
+  function sendRequest() {}
 })();

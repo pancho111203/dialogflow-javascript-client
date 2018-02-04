@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Copyright 2017 Google Inc. All Rights Reserved.
  *
@@ -13,36 +15,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 var webpackConfig = require('./webpack.config')({});
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['mocha', 'chai'],
-    files: [
-      'node_modules/babel-polyfill/dist/polyfill.js',
-      'spec/**/*.spec.ts',
-    ],
+    files: ['node_modules/babel-polyfill/dist/polyfill.js', 'spec/**/*.spec.ts'],
     exclude: [],
     preprocessors: {
-      'spec/**/*.spec.ts': ['webpack'],
+      'spec/**/*.spec.ts': ['webpack']
     },
     webpack: {
       module: webpackConfig.module,
-      resolve: webpackConfig.resolve,
+      resolve: webpackConfig.resolve
     },
     phantomjsLauncher: {
       // Have phantomjs exit if a ResourceError is encountered
       // (useful if karma exits without killing phantom)
       // exitOnResourceError: true,
       base: 'PhantomJS',
-      flags: [
-        '--web-security=false',
-        '--load-images=true',
-        '--ignore-ssl-errors=yes',
-        '--ssl-protocol=any',
-      ],
+      flags: ['--web-security=false', '--load-images=true', '--ignore-ssl-errors=yes', '--ssl-protocol=any']
     },
     reporters: ['progress'],
     port: 9876,
@@ -51,6 +45,6 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['PhantomJS'],
     singleRun: false,
-    concurrency: Infinity,
+    concurrency: Infinity
   });
 };

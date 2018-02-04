@@ -1,3 +1,8 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 /**
  * Copyright 2017 Google Inc. All Rights Reserved.
  *
@@ -13,17 +18,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-export var IStreamClient;
+
+var IStreamClient = exports.IStreamClient = undefined;
 (function (IStreamClient) {
-    let ERROR;
+    var ERROR = void 0;
     (function (ERROR) {
         ERROR[ERROR["ERR_NETWORK"] = 0] = "ERR_NETWORK";
         ERROR[ERROR["ERR_AUDIO"] = 1] = "ERR_AUDIO";
         ERROR[ERROR["ERR_SERVER"] = 2] = "ERR_SERVER";
         ERROR[ERROR["ERR_CLIENT"] = 3] = "ERR_CLIENT";
     })(ERROR = IStreamClient.ERROR || (IStreamClient.ERROR = {}));
-    let EVENT;
+    var EVENT = void 0;
     (function (EVENT) {
         EVENT[EVENT["MSG_WAITING_MICROPHONE"] = 0] = "MSG_WAITING_MICROPHONE";
         EVENT[EVENT["MSG_MEDIA_STREAM_CREATED"] = 1] = "MSG_MEDIA_STREAM_CREATED";
@@ -38,4 +43,4 @@ export var IStreamClient;
         EVENT[EVENT["MSG_STOP"] = 10] = "MSG_STOP";
         EVENT[EVENT["MSG_CONFIG_CHANGED"] = 11] = "MSG_CONFIG_CHANGED";
     })(EVENT = IStreamClient.EVENT || (IStreamClient.EVENT = {}));
-})(IStreamClient || (IStreamClient = {}));
+})(IStreamClient || (exports.IStreamClient = IStreamClient = {}));

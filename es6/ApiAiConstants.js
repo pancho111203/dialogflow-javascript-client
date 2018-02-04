@@ -1,3 +1,8 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 /**
  * Copyright 2017 Google Inc. All Rights Reserved.
  *
@@ -13,10 +18,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-export var ApiAiConstants;
+
+var ApiAiConstants = exports.ApiAiConstants = undefined;
 (function (ApiAiConstants) {
-    let AVAILABLE_LANGUAGES;
+    var AVAILABLE_LANGUAGES = void 0;
     (function (AVAILABLE_LANGUAGES) {
         AVAILABLE_LANGUAGES[AVAILABLE_LANGUAGES["EN"] = "en"] = "EN";
         AVAILABLE_LANGUAGES[AVAILABLE_LANGUAGES["DE"] = "de"] = "DE";
@@ -38,4 +43,4 @@ export var ApiAiConstants;
     ApiAiConstants.DEFAULT_BASE_URL = "https://api.api.ai/v1/";
     ApiAiConstants.DEFAULT_API_VERSION = "20150910";
     ApiAiConstants.DEFAULT_CLIENT_LANG = AVAILABLE_LANGUAGES.EN;
-})(ApiAiConstants || (ApiAiConstants = {}));
+})(ApiAiConstants || (exports.ApiAiConstants = ApiAiConstants = {}));

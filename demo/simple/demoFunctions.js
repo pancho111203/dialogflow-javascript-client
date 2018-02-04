@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 "use strict";
 
 /**
@@ -22,8 +22,8 @@
  */
 
 var client;
-window.init = function(token) {
-  client = new ApiAi.ApiAiClient({accessToken: token});
+window.init = function (token) {
+  client = new ApiAi.ApiAiClient({ accessToken: token });
 };
 
 function sendText(text) {
